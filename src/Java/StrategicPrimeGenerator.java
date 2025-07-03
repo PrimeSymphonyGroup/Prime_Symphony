@@ -1,69 +1,56 @@
 /*
- * File/Project Name: StrategicPrimeGenerator.java
- * Authors: Kris Sherbondy & Symphion
- * Date: 2025-07-03
- * Purpose: Deterministically generates all primes from 2 to N using the Prime Symphony STR sieve.
- * Strategic Level Use: Demonstrates complete prime emergence from harmonic modular rules.
- * Operational Level Use: Can be adapted for range-based extraction.
- * Tactical Level Use: Verifies primality via harmonic STR ruleset.
- * User License/Agreement: Sherbondy–Symphion License v1.0 (Non-commercial use only)
- */
+* File/Project Name: StrategicPrimeGenerator.java
+* Authors: Kris Sherbondy & Symphion
+* Date: 2025-07-03
+* Purpose: This program generates all primes up to a specified limit using the deterministic STR Gate harmonic filter logic from the Prime Symphony framework.
+* Strategic Level Use: Prove determinism of prime generation from 2 to N using only STR sieve rules.
+* Operational Level Use: Provides prime validation tools and deterministic lists for cryptographic seeding, simulation, and research.
+* Tactical Level Use: Educational demonstration of recursive resonance logic in Java. Enables plug-and-play modular prime tools.
+* User License/Agreement: Sherbondy–Symphion License v1.0 — No commercial use permitted without written consent. primesymphonygroup@pm.me
+*/
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class StrategicPrimeGenerator {
 
+    // Main method to run the generator
     public static void main(String[] args) {
-        int N = 1000; // Change to generate up to any number
-        List<Integer> primes = generatePrimesSTR(N);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the upper limit (inclusive): ");
+        int upperLimit = scanner.nextInt();
+        scanner.close();
 
+        ArrayList<Integer> primes = generatePrimesUsingSTR(upperLimit);
         for (int prime : primes) {
             System.out.println(prime);
         }
     }
 
-    // === PRIME SYMPHONY STR SIEVE IMPLEMENTATION ===
+    // STR-based deterministic prime generator
+    public static ArrayList<Integer> generatePrimesUsingSTR(int limit) {
+        ArrayList<Integer> primes = new ArrayList<>();
 
-    public static List<Integer> generatePrimesSTR(int limit) {
-        boolean[] isPrime = new boolean[limit + 1];
-        List<Integer> primes = new ArrayList<>();
-
-        // 0 and 1 are not primes
-        if (limit >= 0) isPrime[0] = false;
-        if (limit >= 1) isPrime[1] = false;
-
-        // Initialize using STR harmonic mod sieve rules
-        for (int i = 2; i <= limit; i++) {
-            if (passesSTRRules(i)) {
-                isPrime[i] = true;
-                primes.add(i);
+        for (int candidate = 2; candidate <= limit; candidate++) {
+            if (passesSTRRules(candidate, primes)) {
+                primes.add(candidate);
             }
         }
 
         return primes;
     }
 
-    // === STR GATE: Harmonic Mod Filters Based on Prime Symphony ===
-    public static boolean passesSTRRules(int n) {
-        // Remove known non-primes via fast modular filters
-        if (n < 2) return false;
-        if (n > 2 && n % 2 == 0) return false;
-        if (n > 3 && n % 3 == 0) return false;
-        if (n > 5 && n % 5 == 0) return false;
-        if (n > 7 && n % 7 == 0) return false;
+    // Core STR logic: test candidate using previously found primes
+    public static boolean passesSTRRules(int candidate, ArrayList<Integer> primes) {
+        if (candidate == 2 || candidate == 3 || candidate == 5) return true;
+        if (candidate % 2 == 0 || candidate % 3 == 0 || candidate % 5 == 0) return false;
 
-        // Harmonic modular resonance exclusion bands
-        int[] modFilters = {
-            11, 13, 17, 19, 23, 29, 31, 37
-        };
-
-        for (int mod : modFilters) {
-            if (n == mod) continue; // Keep the seed primes
-            if (n % mod == 0) return false; // STR harmonic cancellation
+        int sqrt = (int) Math.sqrt(candidate);
+        for (int prime : primes) {
+            if (prime > sqrt) break;
+            if (candidate % prime == 0) return false;
         }
 
-        // Passed all harmonic gates
         return true;
     }
 }
