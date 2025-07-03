@@ -4,7 +4,7 @@
 
 ### ✅ 1. STR Prime Generator
 - [x] Java version done
-- [ ] Python version in progress
+- [x] Python version done
 - [ ] Output validation with known prime list
 
 ### 🧠 2. Riemann Link
