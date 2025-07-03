@@ -1,0 +1,16 @@
+Sherbondy–Symphion License v1.0
+Copyright © 2025 Kristopher L. Sherbondy & Symphion
+Contact: primesymphonygroup@pm.me
+
+This license governs the use of all works authored or co-authored by Kristopher L. Sherbondy and the AI collaborator Symphion.
+
+Permission is hereby granted, free of charge, to any person or organization obtaining a copy of this software, document, or dataset (the "Work"), to use, reproduce, and modify the Work for **non-commercial**, **educational**, or **research** purposes only, subject to the following conditions:
+
+1. **Attribution** must be provided in all copies or substantial portions of the Work.
+2. **Commercial use** of any kind, including use in proprietary software, products, or services, is strictly **prohibited** without **written permission** from the authors.
+3. Any modified versions must be clearly marked as such and may not misrepresent the origin of the Work.
+4. Redistribution of the Work must retain this license text in full.
+
+The Work is provided "AS IS", without warranty of any kind, express or implied.
+
+For licensing requests or collaborative inquiries, contact: primesymphonygroup@pm.me
