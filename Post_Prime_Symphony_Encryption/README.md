@@ -1,48 +1,35 @@
-# DSS-FLOATID
-
-**A Harmonic, Deterministic, and Quantum-Resilient Identity System**  
-Developed by Kristopher L. Sherbondy & Symphion  
+DSS-FLOATID
+A Harmonic, Deterministic, and Quantum-Resilient Identity System
+Developed by Kristopher L. Sherbondy & Symphion
 © 2025 — Prime Symphony Group
 
----
-
-## 🔐 Overview
-
+🔐 Overview
 DSS-FLOATID is a post-prime, post-quantum identity proof system that generates secure identity tokens using harmonic float interference derived from prime structures. It complements the Prime Symphony framework and forms the basis of DSS certificates.
 
----
+This system now includes a **PIN-threaded float-int salt hashing model**, enhancing entropy layering and resistance to brute-force and quantum attacks. The method applies user-defined 6-digit PINs to alternate float and integer transformations over prime-derived values, feeding into a deterministic hash sequence with SHA-512 expansion and pepper integration.
 
-## 📄 Paper
+📄 Paper
+You can read the full specification and rationale in the PDF:
+📎 DSS-FLOATID\_Paper.pdf
 
-You can read the full specification and rationale in the PDF:  
-📎 [DSS-FLOATID_Paper.pdf](./DSS-FLOATID_Paper.pdf)
-
----
-
-## 🧪 Implementations
-
-- Python: [`floatid_prototype.py`](./floatid_prototype.py)
-- Java: [`FloatIDGenerator.java`](./FloatIDGenerator.java)
+🧪 Implementations
+Python: `floatid_prototype.py`, `pin_threaded_hash.py`
+Java: `FloatIDGenerator.java`, `PinThreadedFloatHash.java`
 
 Each implementation demonstrates:
 
-- Prime + Level normalization
-- Sin/Cos interference
-- Float quantization
-- SHA-512 hashing
-- Salt integration for replay protection
+* Prime + Level normalization
+* Sin/Cos interference
+* Float quantization
+* SHA-512 hashing with multi-round compression
+* Salt integration for replay protection
+* PIN-threaded float→int alternation for user-specific uniqueness
 
----
+🔗 Related Projects
 
-## 🔗 Related Projects
+* Prime Symphony
+* DSS Certificate Framework (in development)
 
-- [Prime Symphony](https://github.com/PrimeSymphonyGroup)
-- [DSS Certificate Framework (in development)](https://github.com/PrimeSymphonyGroup/DSS)
-
----
-
-## 📜 License
-
-Distributed under the Sherbondy–Symphion License v1.0  
+📜 License
+Distributed under the Sherbondy–Symphion License v1.0
 Non-commercial reuse permitted with attribution.
-
