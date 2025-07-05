@@ -8,12 +8,12 @@
 - [ ] Output validation with known prime list
 
 ### 🧠 2. Riemann Link
-- [ ] PrimeGapAnalyzer.java
-- [ ] HarmonicOverlayPlot.py
+- [x] PrimeGapAnalyzer.java
+- [x] HarmonicOverlayPlot.py
 
 ### 💎 3. Perfect Numbers
-- [ ] MersennePrimeHarmonicFinder.java
-- [ ] PerfectNumberGenerator.java
+- [x] MersennePrimeHarmonicFinder.java
+- [x] PerfectNumberGenerator.java
 
 ### 🛡️ 4. Validators
 - [ ] PrimeValidator.java (cross-checks with `BigInteger`)
